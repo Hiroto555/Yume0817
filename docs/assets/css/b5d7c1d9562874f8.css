@@ -25,3 +25,31 @@ html, body { overflow-x: hidden; }
   /* Ensure CTA containers do not exceed viewport */
   .rounded-xl { max-width: 100%; box-sizing: border-box; }
 }
+/* --- Mobile CTA and layout fixes (global) --- */
+@media (max-width: 640px) {
+  /* Ensure CTA card and containers fit viewport */
+  .max-w-4xl, .rounded-xl { max-width: 100% !important; }
+  /* Make the gold CTA button fully responsive */
+  a[href$="contact.html"] button {
+    white-space: normal !important;
+    width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+    font-size: 1.125rem !important; /* ~text-lg */
+    line-height: 1.5 !important;
+  }
+  /* Wrap long text and numbers under the CTA */
+  .border-yellow-600, .border-yellow-600 * {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  /* Reduce oversized phone number text inside the CTA area */
+  .border-yellow-600 .text-2xl { font-size: 1.25rem !important; }
+  .border-yellow-600 .text-xl { font-size: 1.125rem !important; }
+}
+/* Prevent stray horizontal scroll globally */
+html, body { overflow-x: hidden; }
+/* Mobile menu z-index over content */
+#mobile-menu { position: relative; z-index: 100; width: 100%; }
