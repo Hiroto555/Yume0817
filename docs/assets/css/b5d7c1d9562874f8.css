@@ -10,3 +10,18 @@ footer li:has(> a[href$="./privacy"]),
 footer li:has(> a[href$="/privacy.html"]),
 footer li:has(> a[href$="privacy.html"]),
 footer li:has(> a[href="#"]) { display: none !important; }
+/* Mobile enhancements */
+html, body { overflow-x: hidden; }
+#mobile-menu { position: relative; z-index: 60; }
+@media (max-width: 480px) {
+  /* Prevent CTA button from overflowing on small screens */
+  a[href$="contact.html"] button {
+    white-space: normal !important;
+    padding-left: 1rem; /* reduce from px-16 */
+    padding-right: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* Ensure CTA containers do not exceed viewport */
+  .rounded-xl { max-width: 100%; box-sizing: border-box; }
+}
